@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>毕业生信息</h1>
+    <form action="#" method="GET">
+        <fieldset style="width: 400px">
+            <legend style="color: red">毕业生信息</legend>
+            姓名：<input type="text" name = "name" autofocus="autofocus" placeholder="请输入姓名" required/>
+            <span style="color:red">*</span>
+            <br>
+            学号：<input type="number" name="num" min="0" autofocus="autofocus" placeholder="请输入年龄" required/>
+            <span style="color:red">*</span>
+            <br>
+            手机：<input type="tel" name="tel" autofocus="autofocus" placeholder="请输入手机" required/>
+            <span style="color:red">*</span>
+            <br>
+            邮箱：<input type="email" name="email" autofocus="autofocus" placeholder="请输入邮箱" required/>
+            <span style="color:red">*</span>
+        </fieldset>
+        <br>
+        <fieldset style="width: 400px">
+            <legend style="color: red">录取情况</legend>
+            录取学校：<input type="search" list="schl" name = "schl" autofocus="autofocus"/>
+            <datalist id="schl">
+                <option value="河北师范大学"></option>
+                <option value="清华大学"></option>
+                <option value="北京大学"></option>
+            </datalist>
+            <br>
+            入学成绩：<input type="number" name = "grade" min="0" autofocus="autofocus"/>
+            <br>
+            入学时间：<input type="date" name = "dt" autofocus="autofocus"/>
+        </fieldset>
+        <br>
+        <input type="submit" value="提交"/>
+        </form>
+</body>
+</html>
