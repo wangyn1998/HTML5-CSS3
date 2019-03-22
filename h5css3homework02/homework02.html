@@ -18,25 +18,47 @@
     </div>
 </body>
 <script type="text/javascript">
+    var v = [];
+    var t = [];
+    var a = localStorage.length;
     function saveit(){
+        var search = document.getElementById("srch");
         var inp = document.getElementById('inp');
         var time =  new Date().getTime();
+        for(var i = 0;i<localStorage.length;i++){
+            t[i] = localStorage.key(i);
+            v[i] = localStorage.getItem(t[i]);
+        }
+        t[a] = time;
+        v[a] = inp.value;
+        a++;
         localStorage.setItem(time,inp.value);
+        for(var i = 0;i<a-1;i++){
+            if(inp.value == v[i]){
+                localStorage.removeItem(t[i]);
+                for(var j = 0;j<a-i;j++){
+                    v[i+j] = v[i+j+1];
+                    t[i+j] = t[i+j+1];
+                }
+                a--;  
+            }
+        }                
         getit();
     }
     function getit(){
-        var result ="<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'></div>";
-        for (var i = 0; i < localStorage.length; i++) {
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-            result +=  "<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'>"+ value +"</div>";
+        var result ="<div width:0px;></div>";
+        for (var i = 0; i < v.length-1; i++) {
+            result +=  "<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'>"+ v[i] +"</div>";
         }
         var search = document.getElementById("srch");
         search.innerHTML = result;
     }
     function deleteit(){
         localStorage.clear();
+        v = [];
+        t = [];
         getit();
+        a = 0;
     }
 
 </script>
