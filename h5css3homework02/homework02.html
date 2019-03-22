@@ -8,7 +8,7 @@
 </head>
 <body>
     <div style="width:300px;height:190px; border: gray solid 1px;"> 
-        <input name="inp" id="inp" style="width: 150px;height: 30px; margin-top:10px; margin-left: 10px;" placeholder="请输入想要查找的商品">
+        <input name="inp" type="search" id="inp" style="width: 150px;height: 30px; margin-top:10px; margin-left: 10px;" placeholder="请输入想要查找的商品">
         <input name="but" type="button" style="width:100px;height: 35px; margin-top:10px ;" value="搜索" onclick="saveit()">
         <p name="p" id="p" style="margin-left: 10px; margin-top: 1px; font-size : 16px; ">最近搜索</p>
         <div style="width:250px;height: 90px; margin-left:5px;float:left;">
@@ -44,6 +44,7 @@
             }
         }                
         getit();
+        inp.value = '';
     }
     function getit(){
         var result ="<div width:0px;></div>";
