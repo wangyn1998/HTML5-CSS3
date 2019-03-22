@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:300px;height:190px; border: gray solid 1px;"> 
+        <input name="inp" id="inp" style="width: 150px;height: 30px; margin-top:10px; margin-left: 10px;" placeholder="请输入想要查找的商品">
+        <input name="but" type="button" style="width:100px;height: 35px; margin-top:10px ;" value="搜索" onclick="saveit()">
+        <p name="p" id="p" style="margin-left: 10px; margin-top: 1px; font-size : 16px; ">最近搜索</p>
+        <div style="width:250px;height: 90px; margin-left:5px;float:left;">
+            <div id="srch"></div>
+        </div>
+        <img  style="float:left; margin-top:20px;margin-left: 10px;" src="x.png" onclick="deleteit()">
+    </div>
+</body>
+<script type="text/javascript">
+    function saveit(){
+        var inp = document.getElementById('inp');
+        var time =  new Date().getTime();
+        localStorage.setItem(time,inp.value);
+        getit();
+    }
+    function getit(){
+        var result ="<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'></div>";
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            result +=  "<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'>"+ value +"</div>";
+        }
+        var search = document.getElementById("srch");
+        search.innerHTML = result;
+    }
+    function deleteit(){
+        localStorage.clear();
+        getit();
+    }
+
+</script>
+</html>
