@@ -47,7 +47,7 @@
     }
     function getit(){
         var result ="<div width:0px;></div>";
-        for (var i = 0; i < v.length-1; i++) {
+        for (var i = 0; i < localStorage.length; i++) {
             result +=  "<div width:0px; style='background-color:gray; margin-left: 5px;margin-top:4px;float:left;'>"+ v[i] +"</div>";
         }
         var search = document.getElementById("srch");
@@ -57,8 +57,8 @@
         localStorage.clear();
         v = [];
         t = [];
-        getit();
         a = 0;
+        getit();
     }
 
 </script>
