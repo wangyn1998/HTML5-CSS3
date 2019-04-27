@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style></style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="200" ></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    //点击刮奖
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.fillStyle = 'gray'
+    context.fillRect(0,0,500,200);
+    context.fill();
+    context.closePath();
+    context.globalCompositeOperation = "destination-out";
+    function draw(x,y){
+        context.beginPath();
+        context.fillStyle = 'red'
+        context.arc(x - canvas.offsetLeft, y - canvas.offsetTop, 20, 0, 2 * Math.PI);
+        context.fill();
+        context.closePath();
+    }
+
+    //拖动鼠标 增加mousemove的事件监听
+    var tag = false;
+    canvas.addEventListener('mousedown', function (event){
+        event.preventDefault();
+        tag = true;
+    });
+    canvas.addEventListener('mouseup', function (event) {
+        event.preventDefault();
+        tag = false;
+    });
+    canvas.addEventListener('mousemove', function (event) {
+        event.preventDefault();
+        if(tag){
+            draw(event.pageX, event.pageY);
+            checkComplete();
+        }
+    });
+    //图片随机出现
+    var img = new Image();
+    var imgs = ['1.png','2.png'];
+    var num = Math.floor(Math.random()*2);
+    img.src = imgs[num];
+    canvas.style.background = "url("+img.src +") no-repeat center ";
+    
+    // 判断是否完成刮奖 点数大于85%
+    function checkComplete() {
+        var imgData = context.getImageData(0, 0, 500, 200);
+        var data = imgData.data;// 获取字节数据
+        var len = data.length; // 获取字节长度
+        var count = 0; // 记录透明点的个数
+        for (var i = 0; i < len; i += 4) {
+            var alpha = data[i + 3]; 
+            if (alpha == 0) {
+                count++;
+            }
+        }
+        console.log(count);
+        var percent = count / (len / 4);
+        if (percent >= 0.85) { 
+            alert("刮奖完成！！");
+            context.clearRect(0,0,500,200);
+            tag = false;
+        }
+        
+    }
+</script>
+</body>
+
+
+</html>
