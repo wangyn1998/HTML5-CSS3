@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3变形与动画</title>
+    <style>
+        .all{
+            position: relative;
+            height: 450px;
+            width: 380px;
+            margin:0 auto;
+            border: lightgray solid 5px;
+        }
+        .pic{
+            position: absolute;
+            width: 380px;
+            height: 250px;
+            background:black;
+            overflow: hidden;
+        }
+        .pic img{
+            opacity: 1;
+            transition: opacity 0.5s;
+            height: 250px;
+            width: 380px;
+        }
+        .all:hover .pic img{
+            transform: scale(2,2);
+            opacity:0.6;
+            
+        }
+        .all:hover{
+            box-shadow: 0px 0px 10px gray;
+        }
+        .circle{
+            position: absolute;
+            width:40px;
+            height:40px;
+            margin-left: 300px;
+            margin-top: 30px;
+            background: rgb(252, 100, 13);
+            border-radius:20px;
+            color:white;
+            float: left;
+            font-size: 10px;
+            text-align:center;
+        }
+        .text1{
+            position: relative;
+            width: 380px;
+            height: 180px;
+            float: left;
+            margin-top: 250px;
+        }
+        .box{
+            background:rgb(252, 100, 13);
+            height: 25px;
+            width: 50px;
+            margin-top: -25px; 
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            float: left;
+            line-height: 20px;
+        }
+        .t1{
+            font-size: 30px;
+            color: black;
+            margin-left: 15px;
+        }
+        .t2{
+            font-size:20px;
+            color: rgb(252, 100, 13);
+            margin-left: 15px;
+        }
+        .t3{
+            font-size:16px;
+            color:gray ;
+            margin-top: -20px;
+            margin-left: 15px;
+            margin-left: 15px;
+            line-height: 30px;
+            display: none;
+            
+        }
+        .text1:hover {
+            opacity: 1;
+            width: 380px;
+            background: white;
+            left: 0;
+            top: -80px;
+            text-align: left;
+            transform: translateY(-40px); 
+            transition: transform 0.5s;
+            display: block;
+        }
+        .text1:hover .t3{
+            display: block;
+        }
+        .t4{
+            height: 18px;
+            font-size:8px;
+            color:gray ;
+            margin-left: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class = 'all'>
+        
+        <div class ="pic">
+            <img src="zhanqiao.jpg">
+        </div>
+        <div class ="circle">15<br>五月</div>        
+        <div class ="text1">
+            <p class ="box">照片</p>
+            <p class = "t1">青岛栈桥</p>
+            <p class = "t2">国家AAAA级旅游景区</p>
+            <p class = "t3">青岛栈桥是青岛海滨风景的景点之一，是国务院于1982年首批公布的国家风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</p>
+        </div> 
+        <p class = "t4">10分钟前      123评论</p>
+        
+    </div>
+    
+</body>
+</html>
