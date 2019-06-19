@@ -7,7 +7,7 @@
     <title>YHYY</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        @media only screen and (min-width: 750px) {
+        @media only screen and (min-width: 700px) {
             #all-PC{
                 display: block;
             }
@@ -15,7 +15,7 @@
                 display: none;
             }
 		}
-		@media only screen and (max-width: 750px) {
+		@media only screen and (max-width: 700px) {
             #all-PC{
                 display: none;
             }
@@ -27,7 +27,7 @@
 </head>
 <body data-spy="scroll"    data-target="#myNav">
     <!-- 导航黑 -->
-    <div style="background: #dddddd; width: 100%;" id="all-PC">
+    <div style="background: #dddddd; width: 100%;overflow: hidden" id="all-PC">
         <div class="container-fluid" style="width:100%; background: black;">
             <nav class="navbar navbar-inserve  navbar-right"  id ="myNav" style="margin: 0 auto; background: black; border:0;" > 
                 <div class="container-fluid">
@@ -229,9 +229,8 @@
                 </div>
             </div>
         </div>
-        <p style="text-align: center">
-            <button type="button" class="btn btn-primary" style="color: black;border:black solid 1px; font-size: 24px;margin-top: 50px;background: #dddddd;width: 235px;height: 50px;">查看更多 ></button>
-        </p>
+        <button type="button" class="btn btn-primary" style="color: black;border:black solid 1px; font-size: 24px;margin-top: 50px;background: #dddddd;width: 235px;height: 50px;">查看更多 ></button>
+        
 
         <!-- 长图 -->
         <img src="img/Bbanner.jpg" class="img-responsive" style="margin-top: 110px;">
@@ -391,7 +390,8 @@
 
 
     <!-- 手机端 -->
-    <div id="all-phone" style="background: #f5f5f5;left:0" >
+
+    <div id="all-phone" style="background: #f5f5f5;left:0;width:100%;overflow: hidden;" >
         <!-- 导航栏 -->
         <div class="container" style = "border:0; width: 100%">
             <nav class="navbar navbar-default" style=" margin: 0 auto; background: white; border:0;">
@@ -486,9 +486,9 @@
                 <div class="col-xs-12">
                     <div class="container">
                         <img src="img/hot1.jpg" class="img-responsive" style="width: 100%;">
-                        <div style="background: black; opacity:0.8; position:absolute;bottom:0;width:88%;color: white;">
+                        <div style="background: black; opacity:0.8; position:absolute;bottom:0;width:92%;color: white;">
                             <p style="margin-top: 10px;margin-left:10px;">海南三亚5天4晚 <span style="font-size:30px;margin-left: 150px;">¥2580／人起</span></p>
-                            <p style="margin-left: 10px;">纯玩、4晚红树林度假王国</p>
+                            <p style="margin-left: 20px;">纯玩、4晚红树林度假王国</p>
                            
                         </div>
                     </div>
@@ -498,7 +498,7 @@
                 <div class="col-xs-12">
                     <div class="container">
                         <img src="img/hot2.jpg" class="img-responsive" style="width: 100%;">
-                        <div style="background: black; opacity:0.8; position:absolute;bottom:0;width:88%;color: white;">
+                        <div style="background: black; opacity:0.8; position:absolute;bottom:0;width:92%;color: white;">
                             <p style="margin-top: 10px;margin-left:10px;">德法意瑞欧洲4国<span style="font-size:30px;margin-left: 150px;">¥7999／人起</span></p>
                             <p style="margin-left: 10px;">ABCD任意线路由您挑选</p> 
                         </div>
@@ -526,7 +526,7 @@
                 <div class="row">
                     <div class="container">
                         <img src="img/visa1.jpg" class="img-responsive" style="width: 100%;">
-                        <div style="background: black; opacity:0.6; position:absolute;bottom:0;width:90%;color: white;">
+                        <div style="background: black; opacity:0.6; position:absolute;bottom:0;width:92%;color: white;">
                             <p style="margin-bottom: 0px;margin-right:0px;">日本旅游签证<span style="font-size:20px;margin-left: 50px;">¥420</span></p>
                         </div>
                     </div> 
@@ -536,7 +536,7 @@
                 <div class="row">
                     <div class="container">
                         <img src="img/visa2.jpg" class="img-responsive" style="width: 100%;">
-                        <div style="background: black; opacity:0.6; position:absolute;bottom:148px;width:88%;color: white;">
+                        <div style="background: black; opacity:0.6; position:absolute;bottom:215px;width:92%;color: white;">
                             <p style="margin-bottom: 0px;margin-right:0px;">美国旅游签证<span style="font-size:20px;margin-left: 20px;">¥1380</span></p>
                         </div>
                     </div> 
@@ -544,7 +544,7 @@
                 <div class="row" style="margin-top: 2px;">
                     <div class="container">
                         <img src="img/visa3.jpg" class="img-responsive" style="width: 100%;">
-                        <div style="background: black; opacity:0.6; position:absolute;bottom:0px;width:88%;color: white;">
+                        <div style="background: black; opacity:0.6; position:absolute;bottom:0px;width:92%;color: white;">
                             <p style="margin-bottom: 0px;margin-right:0px;">新加坡旅游签证<span style="font-size:20px;margin-left: 20px;">¥370</span></p>
                         </div>
                     </div> 
